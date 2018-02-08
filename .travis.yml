@@ -1,0 +1,32 @@
+sudo: required
+
+git:
+  depth: 1
+
+services:
+  - docker
+  - docker-compose
+
+env:
+  global:
+    - DOCKER_COMPOSE_VERSION=1.17.1
+  matrix:
+    - DRUPAL_VERSION=8.5.x-dev
+
+before_install:
+  - docker-compose up -d
+  - docker ps
+
+install:
+  - docker-compose exec -u web web composer require drupal/core:$DRUPAL_VERSION
+
+before_script:
+  - docker-compose exec -u web web ./vendor/bin/run drupal:site-setup
+  - docker-compose exec -u web web ./vendor/bin/run drupal:site-install
+
+script:
+  - docker-compose exec -u web web ./vendor/bin/grumphp run
+  - docker-compose exec -u web web ./vendor/bin/behat
+
+notifications:
+  email: false

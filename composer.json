@@ -1,0 +1,38 @@
+{
+    "name": "ec-europa/extension-skeleton",
+    "description": "OpenEuropa base theme.",
+    "type": "project",
+    "license": "EUPL-1.1",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "cweagans/composer-patches": "~1.0",
+        "ec-europa/oe-code-review": "^0.1",
+        "ec-europa/oe-task-runner": "^0.3",
+        "drupal-composer/drupal-scaffold": "^2.2",
+        "composer/installers": "^1.2",
+        "drupal/console": "^1",
+        "drush/drush": "^9",
+        "drupal/core": "^8.5",
+        "drupal/drupal-extension": "^3.3"
+    },
+    "scripts": {
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        "post-install-cmd": [
+            "@drupal-scaffold"
+        ],
+        "post-update-cmd": [
+            "@drupal-scaffold"
+        ],
+    },
+    "extra": {
+        "installer-paths": {
+            "build/core": ["type:drupal-core"],
+            "build/modules/contrib/{$name}": ["type:drupal-module"],
+            "build/themes/contrib/{$name}": ["type:drupal-theme"]
+        }
+    }
+}
