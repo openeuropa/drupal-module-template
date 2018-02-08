@@ -8,7 +8,7 @@ drupal:
     user: "root"
     password: ""
   post_install:
-    - "./vendor/bin/drush en SKELETON -y"
+    - "./vendor/bin/drush en module-skeleton -y"
     - "./vendor/bin/drush cr"
   settings:
     settings:
@@ -20,7 +20,7 @@ drupal:
 
 commands:
   drupal:site-setup:
-    - { task: "symlink", from: "../../..", to: "${drupal.root}/modules/custom/SKELETON" }
+    - { task: "symlink", from: "../../..", to: "${drupal.root}/modules/custom/module-skeleton" }
     - { task: "run", command: "drupal:drush-setup" }
     - { task: "run", command: "drupal:settings-setup" }
     - { task: "run", command: "setup:behat" }

@@ -1,6 +1,6 @@
 {
-    "name": "openeuropa/SKELETON",
-    "description": "OpenEuropa SKELETON.",
+    "name": "openeuropa/module-skeleton",
+    "description": "OpenEuropa module-skeleton.",
     "type": "project",
     "license": "EUPL-1.1",
     "minimum-stability": "dev",
