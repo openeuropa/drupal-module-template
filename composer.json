@@ -1,6 +1,6 @@
 {
-    "name": "ec-europa/extension-skeleton",
-    "description": "OpenEuropa base theme.",
+    "name": "openeuropa/SKELETON",
+    "description": "OpenEuropa SKELETON.",
     "type": "project",
     "license": "EUPL-1.1",
     "minimum-stability": "dev",
@@ -22,11 +22,12 @@
     "scripts": {
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "post-install-cmd": [
-            "@drupal-scaffold"
+            "@drupal-scaffold",
+            ""
         ],
         "post-update-cmd": [
             "@drupal-scaffold"
-        ],
+        ]
     },
     "extra": {
         "installer-paths": {
