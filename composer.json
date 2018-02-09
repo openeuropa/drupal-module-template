@@ -22,10 +22,13 @@
     "scripts": {
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "post-install-cmd": [
-            "./replace-names.sh",
             "@drupal-scaffold"
         ],
         "post-update-cmd": [
+            "@drupal-scaffold"
+        ],
+	"post-create-project-cmd": [
+	   "./replace-names.sh",
             "@drupal-scaffold"
         ]
     },
