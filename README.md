@@ -1,5 +1,11 @@
 # OpenEuropa module-skeleton
 
+## Start development of a new module
+Start building a new module
+```
+$ composer create-project openeuropa/module-skeleton oe_my_new_module
+```
+
 ## Development setup
 
 You can build test site by running the following steps.
