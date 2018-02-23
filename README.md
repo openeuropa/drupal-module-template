@@ -1,4 +1,6 @@
 # OpenEuropa module-skeleton
+[![Build Status](https://travis-ci.org/ec_europa/module-skeleton.svg?branch=master)](https://travis-ci.org/ec_europa/module-skeleton)
+
 
 ## Start development of a new module
 Start building a new module
@@ -6,9 +8,18 @@ Start building a new module
 $ composer create-project openeuropa/module-skeleton oe_my_new_module
 ```
 
+### Replace all occurrences of `module-skeleton` with the module name.
+@todo
+
+### Rename the info file.
+@todo
+
+### Remove the reference to this script from the composer manifest and delete it.
+@todo
+
 ## Development setup
 
-You can build test site by running the following steps.
+You can build the test site by running the following steps.
 
 * Install all the composer dependencies:
 
@@ -17,7 +28,7 @@ $ composer install
 ```
 
 * Customize build settings by copying `runner.yml.dist` to `runner.yml` and
-changing relevant values.
+changing relevant values, like your database credentials.
 
 * Setup test site by running:
 

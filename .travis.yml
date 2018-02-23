@@ -9,9 +9,11 @@ services:
 
 env:
   global:
-    - DOCKER_COMPOSE_VERSION=1.17.1
+    - DOCKER_COMPOSE_VERSION=1.19.0
   matrix:
-    - DRUPAL_VERSION=8.5.x-dev
+    - DRUPAL_VERSION=8.6.x
+    - DRUPAL_VERSION=8.5.x
+    - DRUPAL_VERSION=8.4.x
 
 before_install:
   - docker-compose up -d
@@ -26,6 +28,7 @@ before_script:
 
 script:
   - docker-compose exec -u web web ./vendor/bin/grumphp run
+  - docker-compose exec -u web web ./vendor/bin/phpunit
   - docker-compose exec -u web web ./vendor/bin/behat
 
 notifications:

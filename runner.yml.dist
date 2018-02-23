@@ -4,7 +4,7 @@ drupal:
   database:
     host: "mysql"
     port: "3306"
-    name: "drupal"
+    name: "module-skeleton"
     user: "root"
     password: ""
   post_install:
