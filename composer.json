@@ -10,16 +10,15 @@
     },
     "require-dev": {
         "composer/installers": "^1.2",
-        "drupal/core": "^8.5",
-        "drupal-composer/drupal-scaffold": "^2.2",
+        "drupal/drupal-extension": "^4.0.0@alpha",
         "drush/drush": "^9",
+        "drupal-composer/drupal-scaffold": "^2.2",
         "openeuropa/code-review": "^0.2",
         "openeuropa/task-runner": "^0.4",
         "phpunit/phpunit": "^4.8.28"
     },
     "suggest": {
-        "drupal/console": "^1",
-        "drupal/drupal-extension": "^4.0.0@alpha"
+        "drupal/console": "^1"
     },
     "scripts": {
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
@@ -29,22 +28,22 @@
         "post-update-cmd": [
             "@drupal-scaffold"
         ],
-	"post-create-project-cmd": [
-	   "./replace-names.sh",
+        "post-create-project-cmd": [
+            "./replace-names.sh",
             "@drupal-scaffold"
         ]
+    },
+    "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
     },
     "extra": {
         "installer-paths": {
             "build/core": ["type:drupal-core"],
             "build/modules/contrib/{$name}": ["type:drupal-module"],
             "build/themes/contrib/{$name}": ["type:drupal-theme"]
-        }
-    },
-    "repositories": {
-        "drupal": {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
         }
     }
 }
