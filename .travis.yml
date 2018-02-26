@@ -13,12 +13,13 @@ env:
     - NAME_TRAVIS_MODULE=oe_my_new_module
   matrix:
     - DRUPAL_VERSION=8.6.x
+    - DRUPAL_VERSION=8.5.x-dev
     - DRUPAL_VERSION=8.5.x
     - DRUPAL_VERSION=8.4.x
 
 before_install:
+  - ./replace-names.sh
   - docker-compose up -d
-  - ./rename-names.sh
 
 install:
   - docker-compose exec -u web web composer require drupal/core:$DRUPAL_VERSION
