@@ -27,18 +27,6 @@
             "@drupal-scaffold"
         ]
     },
-    "autoload-dev": {
-        "psr-0": {
-            "Drupal\\Tests": "build/core/tests",
-            "Drupal\\KernelTests": "build/core/tests",
-            "Drupal\\FunctionalTests": "build/core/tests",
-            "Drupal\\FunctionalJavascriptTests": "build/core/tests"
-        },
-        "psr-4": {
-            "Drupal\\simpletest\\": "build/core/modules/simpletest/src",
-            "Drupal\\Tests\\drupal-module-template\\": "tests"
-        }
-    },
     "repositories": {
         "drupal": {
             "type": "composer",
