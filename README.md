@@ -7,15 +7,10 @@ Start building a new module
 ```
 $ composer create-project openeuropa/drupal-module-template oe_my_new_module
 ```
-
-### Replace all occurrences of `drupal-module-template` with the module name.
-@todo
-
-### Rename the info file.
-@todo
-
-### Remove the reference to this script from the composer manifest and delete it.
-@todo
+### Actions
+- Replace all occurrences of `drupal-module-template` with the module name.
+- Rename the info file.
+- Remove the reference to this script from the composer manifest and delete it.
 
 ## Development setup
 
