@@ -10,20 +10,26 @@
     },
     "require-dev": {
         "composer/installers": "^1.2",
-        "drupal/core": "^8.5",
         "drupal/drupal-extension": "^4.0.0@alpha",
         "drush/drush": "^9",
+        "drupal-composer/drupal-scaffold": "^2.2",
         "openeuropa/code-review": "^0.2",
         "openeuropa/task-runner": "^0.4",
         "phpunit/phpunit": "^4.8.28"
     },
     "suggest": {
-        "drupal/console": "^1",
-        "drupal/drupal-extension": "^4.0.0@alpha"
+        "drupal/console": "^1"
     },
     "scripts": {
-	    "post-create-project-cmd": [
-	        "./replace-names.sh",
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        "post-install-cmd": [
+            "@drupal-scaffold"
+        ],
+        "post-update-cmd": [
+            "@drupal-scaffold"
+        ],
+        "post-create-project-cmd": [
+            "./replace-names.sh",
             "@drupal-scaffold"
         ]
     },
