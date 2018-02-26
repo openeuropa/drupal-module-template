@@ -17,13 +17,8 @@ env:
     - DRUPAL_VERSION=8.4.x
 
 before_install:
-  - export BRANCH_GIT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
   - docker-compose up -d
-  - docker-compose exec -u web web composer create-project -n openeuropa/drupal-module-template:dev-$BRANCH_GIT $NAME_TRAVIS_MODULE
-  - docker-compose down
-  - cd $NAME_TRAVIS_MODULE
-  - docker-compose up -d
-  - docker ps
+  - ./rename-names.sh
 
 install:
   - docker-compose exec -u web web composer require drupal/core:$DRUPAL_VERSION
