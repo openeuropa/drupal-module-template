@@ -9,13 +9,10 @@ services:
 
 env:
   global:
-    - DOCKER_COMPOSE_VERSION=1.19.0
+    - DOCKER_COMPOSE_VERSION=1.17.0
     - NAME_TRAVIS_MODULE=oe_my_new_module
   matrix:
-    - DRUPAL_VERSION=8.6.x
     - DRUPAL_VERSION=8.5.x-dev
-    - DRUPAL_VERSION=8.5.x
-    - DRUPAL_VERSION=8.4.x
 
 before_install:
   - mv $PWD ../$NAME_TRAVIS_MODULE
