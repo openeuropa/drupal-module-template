@@ -11,7 +11,7 @@
     "require-dev": {
         "composer/installers": "^1.2",
         "drupal/core": "^8.5",
-        "drupal-composer/drupal-scaffold": "^2.2",
+        "drupal/drupal-extension": "^4.0.0@alpha",
         "drush/drush": "^9",
         "openeuropa/code-review": "^0.2",
         "openeuropa/task-runner": "^0.4",
@@ -22,29 +22,34 @@
         "drupal/drupal-extension": "^4.0.0@alpha"
     },
     "scripts": {
-        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-        "post-install-cmd": [
-            "@drupal-scaffold"
-        ],
-        "post-update-cmd": [
-            "@drupal-scaffold"
-        ],
-	"post-create-project-cmd": [
-	   "./replace-names.sh",
+	    "post-create-project-cmd": [
+	        "./replace-names.sh",
             "@drupal-scaffold"
         ]
     },
-    "extra": {
-        "installer-paths": {
-            "build/core": ["type:drupal-core"],
-            "build/modules/contrib/{$name}": ["type:drupal-module"],
-            "build/themes/contrib/{$name}": ["type:drupal-theme"]
+    "autoload-dev": {
+        "psr-0": {
+            "Drupal\\Tests": "build/core/tests",
+            "Drupal\\KernelTests": "build/core/tests",
+            "Drupal\\FunctionalTests": "build/core/tests",
+            "Drupal\\FunctionalJavascriptTests": "build/core/tests"
+        },
+        "psr-4": {
+            "Drupal\\simpletest\\": "build/core/modules/simpletest/src",
+            "Drupal\\Tests\\drupal-module-template\\": "tests"
         }
     },
     "repositories": {
         "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        }
+    },
+    "extra": {
+        "installer-paths": {
+            "build/core": ["type:drupal-core"],
+            "build/modules/contrib/{$name}": ["type:drupal-module"],
+            "build/themes/contrib/{$name}": ["type:drupal-theme"]
         }
     }
 }
