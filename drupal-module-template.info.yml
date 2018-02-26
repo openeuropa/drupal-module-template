@@ -1,0 +1,5 @@
+name: Drupal module template
+type: module
+description: OpenEuropa Drupal module template.
+core: 8.x
+package: OpenEuropa

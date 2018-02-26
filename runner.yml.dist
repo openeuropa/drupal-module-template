@@ -4,11 +4,11 @@ drupal:
   database:
     host: "mysql"
     port: "3306"
-    name: "module-skeleton"
+    name: "drupal-module-template"
     user: "root"
     password: ""
   post_install:
-    - "./vendor/bin/drush en module-skeleton -y"
+    - "./vendor/bin/drush en drupal-module-template -y"
     - "./vendor/bin/drush cr"
   settings:
     settings:
@@ -20,7 +20,7 @@ drupal:
 
 commands:
   drupal:site-setup:
-    - { task: "symlink", from: "../../..", to: "${drupal.root}/modules/custom/module-skeleton" }
+    - { task: "symlink", from: "../../..", to: "${drupal.root}/modules/custom/drupal-module-template" }
     - { task: "run", command: "drupal:drush-setup" }
     - { task: "run", command: "drupal:settings-setup" }
     - { task: "run", command: "setup:behat" }

@@ -1,14 +1,14 @@
-# OpenEuropa module-skeleton
-[![Build Status](https://travis-ci.org/ec_europa/module-skeleton.svg?branch=master)](https://travis-ci.org/ec_europa/module-skeleton)
+# OpenEuropa Drupal module template
+[![Build Status](https://travis-ci.org/openeuropa/drupal-module-template.svg?branch=master)](https://travis-ci.org/openeuropa/drupal-module-template)
 
 
 ## Start development of a new module
 Start building a new module
 ```
-$ composer create-project openeuropa/module-skeleton oe_my_new_module
+$ composer create-project openeuropa/drupal-module-template oe_my_new_module
 ```
 
-### Replace all occurrences of `module-skeleton` with the module name.
+### Replace all occurrences of `drupal-module-template` with the module name.
 @todo
 
 ### Rename the info file.

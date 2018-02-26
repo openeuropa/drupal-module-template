@@ -1,6 +1,6 @@
 {
-    "name": "openeuropa/module-skeleton",
-    "description": "OpenEuropa module-skeleton.",
+    "name": "openeuropa/drupal-module-template",
+    "description": "OpenEuropa Drupal module template.",
     "type": "drupal-module",
     "license": "EUPL-1.1",
     "minimum-stability": "dev",
