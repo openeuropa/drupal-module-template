@@ -10,18 +10,12 @@ services:
 env:
   global:
     - DOCKER_COMPOSE_VERSION=1.19.0
-    - NAME_TRAVIS_MODULE=oe_my_new_module
   matrix:
     - DRUPAL_VERSION=8.6.x
     - DRUPAL_VERSION=8.5.x
     - DRUPAL_VERSION=8.4.x
 
 before_install:
-  - export BRANCH_GIT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
-  - docker-compose up -d
-  - docker-compose exec -u web web composer create-project openeuropa/drupal-module-template:dev-$BRANCH_GIT $NAME_TRAVIS_MODULE
-  - docker-compose down
-  - cd $NAME_TRAVIS_MODULE
   - docker-compose up -d
   - docker ps
 
