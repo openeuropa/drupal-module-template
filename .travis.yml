@@ -16,7 +16,6 @@ env:
     - DRUPAL_VERSION=8.6.x
     - DRUPAL_VERSION=8.5.x
     - DRUPAL_VERSION=8.5.x-dev
-    - DRUPAL_VERSION=8.4.x
 
 before_install:
   - mv $PWD ../$NAME_TRAVIS_MODULE
