@@ -68,6 +68,18 @@ $ docker-compose exec -u web web ./vendor/bin/run drupal:site-install
 
 Your test site will be available at [http://localhost:8080/build](http://localhost:8080/build).
 
+To run the grumphp test:
+
+```
+$ docker-compose exec -u web web ./vendor/bin/grumphp run
+```
+
+To run the phpunit test:
+
+```
+$ docker-compose exec -u web web ./vendor/bin/phpunit
+```
+
 To run the behat test:
 
 ```
