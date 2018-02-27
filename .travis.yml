@@ -21,7 +21,9 @@ before_install:
   - mv $PWD ../$NAME_TRAVIS_MODULE
   - cd ../$NAME_TRAVIS_MODULE
   - ./replace-names.sh
-  - docker-compose up -d
+  - docker-compose build
+  - docker-compose up --no-start
+  - docker-compose start
 
 install:
   - docker-compose exec -u web web composer require drupal/core:$DRUPAL_VERSION
