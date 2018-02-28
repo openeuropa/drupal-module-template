@@ -20,7 +20,7 @@ env:
 before_install:
   - mv $PWD ../$NAME_TRAVIS_MODULE
   - cd ../$NAME_TRAVIS_MODULE
-  - ./replace-names.sh
+  - ./build-module.sh
   - docker-compose build
   - docker-compose up --no-start
   - docker-compose start

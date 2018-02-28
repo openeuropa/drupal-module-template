@@ -12,6 +12,9 @@ mv drupal-module-template.info.yml ${repo_name}.info.yml
 # Replace the travis.yml with travis.module.yml
 mv .travis.module.yml .travis.yml
 
+# Replace the README.md with README.module.md
+mv README.module.md README.md
+
 # Remove the call of replace-names.sh in composer and delete it
-sed -i "/replace-names/d" composer.json
-rm replace-names.sh
+sed -i "/build-module/d" composer.json
+rm build-module.sh

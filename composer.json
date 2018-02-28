@@ -23,7 +23,7 @@
     "scripts": {
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "post-create-project-cmd": [
-            "./replace-names.sh"
+            "./build-module.sh"
         ]
     },
     "repositories": {

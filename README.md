@@ -4,84 +4,17 @@
 
 ## Start development of a new module
 
-### Start building a new module
+### Building a new module with composer
 ```
 $ composer create-project openeuropa/drupal-module-template oe_my_new_module
 ```
 
-### Start manually building a module
+### Building manually a new module
 - Clone the repo
-- Run ./replace-names.sh (see the script to know the actions)
+- Run ./build-module.sh (see the script to know the actions)
 
-## Development setup
-
-You can build the test site by running the following steps.
-
-* Install all the composer dependencies:
-
-```
-$ composer install
-```
-
-* Customize build settings by copying `runner.yml.dist` to `runner.yml` and
-changing relevant values, like your database credentials.
-
-* Setup test site by running:
-
-```
-$ ./vendor/bin/run drupal:site-setup
-```
-
-This will symlink the theme in the proper directory within the test site and
-perform token substitution in test configuration files such as `behat.yml.dist`.
-
-* Install test site by running:
-
-```
-$ ./vendor/bin/run drupal:site-install
-```
-
-Your test site will be available at `./build`.
-
-### Using Docker Compose
-
-Alternatively you can build a test site using Docker and Docker-compose with the provided configuration.
-
-Requirements:
-
-- [Docker](https://www.docker.com/get-docker)
-- [Docker-compose](https://docs.docker.com/compose/)
-
-Run:
-
-```
-$ docker-compose up -d
-```
-
-Then:
-
-```
-$ docker-compose exec -u web web composer install
-$ docker-compose exec -u web web ./vendor/bin/run drupal:site-setup
-$ docker-compose exec -u web web ./vendor/bin/run drupal:site-install
-```
-
-Your test site will be available at [http://localhost:8080/build](http://localhost:8080/build).
-
-To run the grumphp test:
-
-```
-$ docker-compose exec -u web web ./vendor/bin/grumphp run
-```
-
-To run the phpunit test:
-
-```
-$ docker-compose exec -u web web ./vendor/bin/phpunit
-```
-
-To run the behat test:
-
-```
-$ docker-compose exec -u web web ./vendor/bin/behat
-```
+## Template Files
+- ```READ.module.md```: the file template of ```README.md``` for the Drupal
+  module.
+- ```.travis.module.yml```: the file template of ```.travis.yml``` for the
+  Drupal module.
