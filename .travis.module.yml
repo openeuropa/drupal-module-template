@@ -10,17 +10,12 @@ services:
 env:
   global:
     - DOCKER_COMPOSE_VERSION=1.19.0
-    - NAME_TRAVIS_MODULE=oe_my_new_module
-
   matrix:
     - DRUPAL_VERSION=8.6.x
     - DRUPAL_VERSION=8.5.x
     - DRUPAL_VERSION=8.5.x-dev
 
 before_install:
-  - mv $PWD ../$NAME_TRAVIS_MODULE
-  - cd ../$NAME_TRAVIS_MODULE
-  - ./build-module.sh
   - docker-compose build
   - docker-compose up --no-start
   - docker-compose start

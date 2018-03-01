@@ -1,7 +1,7 @@
 {
-    "name": "ec-europa/extension-skeleton",
-    "description": "OpenEuropa base theme.",
-    "type": "project",
+    "name": "openeuropa/drupal-module-template",
+    "description": "OpenEuropa Drupal module template.",
+    "type": "drupal-module",
     "license": "EUPL-1.1",
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -9,24 +9,28 @@
         "php": "^7.1"
     },
     "require-dev": {
-        "cweagans/composer-patches": "~1.0",
-        "ec-europa/oe-code-review": "^0.1",
-        "ec-europa/oe-task-runner": "^0.3",
-        "drupal-composer/drupal-scaffold": "^2.2",
         "composer/installers": "^1.2",
-        "drupal/console": "^1",
+        "drupal/drupal-extension": "^4.0.0@alpha",
         "drush/drush": "^9",
-        "drupal/core": "^8.5",
-        "drupal/drupal-extension": "^3.3"
+        "drupal-composer/drupal-scaffold": "^2.2",
+        "openeuropa/code-review": "^0.2",
+        "openeuropa/task-runner": "^0.4",
+        "phpunit/phpunit": "^4.8.28"
+    },
+    "suggest": {
+        "drupal/console": "^1"
     },
     "scripts": {
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-        "post-install-cmd": [
-            "@drupal-scaffold"
-        ],
-        "post-update-cmd": [
-            "@drupal-scaffold"
-        ],
+        "post-create-project-cmd": [
+            "./build-module.sh"
+        ]
+    },
+    "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
     },
     "extra": {
         "installer-paths": {
