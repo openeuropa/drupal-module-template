@@ -6,7 +6,7 @@
 
 ### Building a new module with composer
 ```
-$ composer create-project openeuropa/drupal-module-template oe_my_new_module
+$ composer create-project openeuropa/drupal-module-template:dev-master oe_my_new_module
 ```
 
 ### Building manually a new module
