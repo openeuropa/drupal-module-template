@@ -15,7 +15,7 @@
         "drupal-composer/drupal-scaffold": "^2.2",
         "openeuropa/code-review": "^0.2",
         "openeuropa/task-runner": "^0.4",
-        "phpunit/phpunit": "^4.8.28"
+        "phpunit/phpunit": "^6.0"
     },
     "suggest": {
         "drupal/console": "^1"
