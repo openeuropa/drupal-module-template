@@ -1,0 +1,71 @@
+workspace:
+  base: /test
+  path: drupal-module-template
+
+services:
+  web:
+    image: fpfis/php71-build:latest
+    environment:
+      - DOCUMENT_ROOT=/test/drupal-module-template
+  mysql:
+    image: percona/percona-server:5.6
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=drupal_module_template
+      - MYSQL_ROOT_PASSWORD=
+
+  frpc-tunnel:
+    image: fpfis/drone-frpc-plugin:latest
+    when:
+      event: [ push, tag ]
+    secrets: [ frpc_token, frpc_server ]
+    environment:
+      - PLUGIN_ENDPOINT=web:8080
+      - PLUGIN_GEN_AUTH=yes
+      - PLUGIN_DOMAIN=drupal-module-template-${DRONE_BUILD_NUMBER}-${DRONE_JOB_NUMBER}.ci.fpfis.tech.ec.europa.eu
+      - PLUGIN_URL_OUTPUT_FILE=/test/drupal-module-template/.frpc
+
+pipeline:
+  composer-install:
+    group: prepare
+    image: fpfis/php71-build
+    volumes:
+      - /cache:/cache
+    commands:
+      - composer require drupal/core:${DRUPAL_VERSION=8.6.x}
+
+  site-install:
+    image: fpfis/php71-build
+    commands:
+      - ./vendor/bin/run drupal:site-setup
+      - ./vendor/bin/run drupal:site-install
+
+  grumphp:
+    group: test
+    image: fpfis/php71-build
+    commands:
+      - ./vendor/bin/grumphp run
+
+  phpunit:
+    group: test
+    image: fpfis/php71-build
+    commands:
+      # Reset permission since installation runs as root. @todo Fix this.
+      - mkdir -p build/sites/simpletest
+      - chown -R 1000:1000 build/sites/default
+      - chown -R 1000:1000 build/sites/simpletest
+      - chmod -R 777 /tmp
+      - useradd -u 1000 -m -s /bin/bash web
+      - su web -c"./vendor/bin/phpunit"
+
+  behat:
+    group: test
+    image: fpfis/php71-build
+    commands:
+      - ./vendor/bin/behat
+
+matrix:
+  DRUPAL_VERSION:
+    - 8.6.x
+    - 8.5.x
+    - 8.5.x-dev
