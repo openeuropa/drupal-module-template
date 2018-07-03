@@ -15,7 +15,7 @@
         "drupal-composer/drupal-scaffold": "^2.2",
         "openeuropa/code-review": "^0.2",
         "openeuropa/task-runner": "^0.4",
-        "phpunit/phpunit": "^6.0"
+        "webflo/drupal-core-require-dev": "8.6.x"
     },
     "suggest": {
         "drupal/console": "^1"
