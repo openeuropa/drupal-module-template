@@ -2,7 +2,7 @@
     "name": "openeuropa/drupal-module-template",
     "description": "OpenEuropa Drupal module template.",
     "type": "drupal-module",
-    "license": "EUPL-1.1",
+    "license": "EUPL-1.2",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
