@@ -26,7 +26,7 @@ before_install:
   - docker-compose start
 
 install:
-  - docker-compose exec -u web web composer require drupal/core:$DRUPAL_VERSION
+  - docker-compose exec -u web web composer require webflo/drupal-core-require-dev:$DRUPAL_VERSION
 
 before_script:
   - docker-compose exec -u web web ./vendor/bin/run drupal:site-setup
