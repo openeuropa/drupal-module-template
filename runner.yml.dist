@@ -8,7 +8,7 @@ drupal:
     user: "root"
     password: ""
   post_install:
-    - "./vendor/bin/drush en drupal-module-template -y"
+    - "./vendor/bin/drush en drupal_module_template -y"
     - "./vendor/bin/drush cr"
   settings:
     settings:

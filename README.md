@@ -1,6 +1,4 @@
 # OpenEuropa Drupal module template
-[![Build Status](https://travis-ci.org/openeuropa/drupal-module-template.svg?branch=master)](https://travis-ci.org/openeuropa/drupal-module-template)
-
 
 ## Start development of a new module
 
@@ -16,5 +14,3 @@ $ composer create-project openeuropa/drupal-module-template oe_my_new_module
 ## Template Files
 - ```READ.module.md```: the file template of ```README.md``` for the Drupal
   module.
-- ```.travis.module.yml```: the file template of ```.travis.yml``` for the
-  Drupal module.
