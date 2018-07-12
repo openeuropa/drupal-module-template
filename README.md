@@ -1,4 +1,5 @@
 # OpenEuropa Drupal module template
+[![Build Status](https://drone.fpfis.eu/api/badges/openeuropa/drupal-module-template/status.svg)](https://drone.fpfis.eu/openeuropa/drupal-module-template/)
 
 ## Start development of a new module
 
