@@ -9,9 +9,6 @@ find ${repo_root} -maxdepth 1 -type f | xargs sed -i  ${subst};
 # Rename the info file.
 mv drupal-module-template.info.yml ${repo_name}.info.yml
 
-# Replace the travis.yml with travis.module.yml
-mv .travis.module.yml .travis.yml
-
 # Replace the README.md with README.module.md
 mv README.module.md README.md
 
