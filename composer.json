@@ -13,7 +13,7 @@
         "drupal/drupal-extension": "^4.0.0@alpha",
         "drush/drush": "^9",
         "drupal-composer/drupal-scaffold": "^2.2",
-        "openeuropa/code-review": "^0.2",
+        "openeuropa/code-review": "^0.3",
         "openeuropa/task-runner": "^0.4",
         "webflo/drupal-core-require-dev": "8.6.x"
     },
