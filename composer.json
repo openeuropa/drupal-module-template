@@ -6,7 +6,8 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^7.1"
+        "php": "^7.1",
+        "drupal/core": "~8.6"
     },
     "require-dev": {
         "composer/installers": "^1.2",
@@ -15,7 +16,7 @@
         "drupal-composer/drupal-scaffold": "^2.2",
         "openeuropa/code-review": "^0.3",
         "openeuropa/task-runner": "^0.4",
-        "webflo/drupal-core-require-dev": "8.6.x"
+        "webflo/drupal-core-require-dev": "~8.6"
     },
     "suggest": {
         "drupal/console": "^1"
