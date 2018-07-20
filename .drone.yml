@@ -19,7 +19,7 @@ pipeline:
     volumes:
       - /cache:/cache
     commands:
-      - composer require --dev webflo/drupal-core-require-dev:${DRUPAL_VERSION=8.6.x}
+      - composer require drupal/core:${DRUPAL_VERSION=8.6.x} webflo/drupal-core-require-dev:${DRUPAL_VERSION=8.6.x}
 
   site-install:
     image: fpfis/httpd-php-dev:7.1
