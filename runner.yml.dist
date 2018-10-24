@@ -6,7 +6,7 @@ drupal:
   database:
     host: "mysql"
     port: "3306"
-    name: "drupal-module-template"
+    name: "drupal_module_template"
     user: "root"
     password: ""
   post_install:

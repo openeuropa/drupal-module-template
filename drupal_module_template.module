@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * OpenEuropa module.
+ */
+
+declare(strict_types = 1);
