@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 repo_root=$(pwd);
-repo_name=$(basename ${repo_root});
-subst="s/drupal[-_]module[-_]template/${repo_name}/g";
+repo_name=$(basename ${repo_root/-/_});
+subst="s/drupal_module_template/${repo_name}/g";
 
-# Replace all occurrences of `drupal-module-template` with the module name.
+# Replace all occurrences of `drupal_module_template` with the module name.
 find ${repo_root} -maxdepth 1 -type f | xargs sed -i  ${subst};
 
 # Rename the files.
