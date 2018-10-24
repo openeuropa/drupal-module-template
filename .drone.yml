@@ -13,13 +13,30 @@ services:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
 
 pipeline:
-  composer-install:
+  composer-install-lowest:
     group: prepare
     image: fpfis/httpd-php-dev:7.1
     volumes:
-      - /cache:/cache
+    - /cache:/cache
     commands:
-      - composer require drupal/core:${DRUPAL_VERSION=8.6.x} webflo/drupal-core-require-dev:${DRUPAL_VERSION=8.6.x}
+    # @todo remove "composer install" step once the following issue is fixed.
+    # @link https://webgate.ec.europa.eu/CITnet/jira/browse/OPENEUROPA-1234
+    - composer install --ansi --no-suggest --no-progress
+    - composer update --prefer-lowest --prefer-stable --ansi --no-suggest --no-progress
+    when:
+      matrix:
+        COMPOSER_BOUNDARY: lowest
+
+  composer-install-highest:
+    group: prepare
+    image: fpfis/httpd-php-dev:7.1
+    volumes:
+    - /cache:/cache
+    commands:
+    - composer install --ansi --no-suggest --no-progress
+    when:
+      matrix:
+        COMPOSER_BOUNDARY: highest
 
   site-install:
     image: fpfis/httpd-php-dev:7.1
@@ -36,16 +53,15 @@ pipeline:
     group: test
     image: fpfis/httpd-php-dev:7.1
     commands:
-      - ./vendor/bin/phpunit
+    - ./vendor/bin/phpunit
 
   behat:
     group: test
     image: fpfis/php71-build
     commands:
-      - ./vendor/bin/behat
+    - ./vendor/bin/behat
 
 matrix:
-  DRUPAL_VERSION:
-    - 8.6.x
-    - 8.5.x
-    - 8.5.x-dev
+  COMPOSER_BOUNDARY:
+  - lowest
+  - highest

@@ -12,6 +12,6 @@ mv drupal_module_template.info.yml ${repo_name}.info.yml
 # Replace the README.md with README.module.md
 mv README.module.md README.md
 
-# Remove the call of replace-names.sh in composer and delete it
+# Remove the call of build-module.sh in composer and delete it
 sed -i "/build-module/d" composer.json
 rm build-module.sh
