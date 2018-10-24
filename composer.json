@@ -36,12 +36,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Drupal\\drupal-module-template\\": "./src/"
+            "Drupal\\drupal_module_template\\": "./src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Drupal\\Tests\\drupal-module-template\\": "./tests/"
+            "Drupal\\Tests\\drupal_module_template\\": "./tests/"
         }
     },
     "extra": {

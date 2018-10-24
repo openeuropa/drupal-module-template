@@ -1,12 +1,12 @@
 workspace:
   base: /test
-  path: drupal-module-template
+  path: drupal_module_template
 
 services:
   web:
     image: fpfis/httpd-php-dev:7.1
     environment:
-      - DOCUMENT_ROOT=/test/drupal-module-template
+      - DOCUMENT_ROOT=/test/drupal_module_template
   mysql:
     image: percona/percona-server:5.6
     environment:
@@ -17,12 +17,12 @@ pipeline:
     group: prepare
     image: fpfis/httpd-php-dev:7.1
     volumes:
-    - /cache:/cache
+      - /cache:/cache
     commands:
-    # @todo remove "composer install" step once the following issue is fixed.
-    # @link https://webgate.ec.europa.eu/CITnet/jira/browse/OPENEUROPA-1234
-    - composer install --ansi --no-suggest --no-progress
-    - composer update --prefer-lowest --prefer-stable --ansi --no-suggest --no-progress
+      # @todo remove "composer install" step once the following issue is fixed.
+      # @link https://webgate.ec.europa.eu/CITnet/jira/browse/OPENEUROPA-1234
+      - composer install --ansi --no-suggest --no-progress
+      - composer update --prefer-lowest --prefer-stable --ansi --no-suggest --no-progress
     when:
       matrix:
         COMPOSER_BOUNDARY: lowest
@@ -31,9 +31,9 @@ pipeline:
     group: prepare
     image: fpfis/httpd-php-dev:7.1
     volumes:
-    - /cache:/cache
+      - /cache:/cache
     commands:
-    - composer install --ansi --no-suggest --no-progress
+      - composer install --ansi --no-suggest --no-progress
     when:
       matrix:
         COMPOSER_BOUNDARY: highest
@@ -53,13 +53,13 @@ pipeline:
     group: test
     image: fpfis/httpd-php-dev:7.1
     commands:
-    - ./vendor/bin/phpunit
+      - ./vendor/bin/phpunit
 
   behat:
     group: test
-    image: fpfis/php71-build
+    image: fpfis/httpd-php-dev:7.1
     commands:
-    - ./vendor/bin/behat
+      - ./vendor/bin/behat
 
 matrix:
   COMPOSER_BOUNDARY:
