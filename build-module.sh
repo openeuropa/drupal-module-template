@@ -4,11 +4,24 @@ repo_name=$(basename ${repo_root/-/_});
 
 # Replace all occurrences of `drupal_module_template` with the module name.
 subst="s/drupal_module_template/${repo_name}/g";
-find ${repo_root} -maxdepth 1 -type f | xargs sed -i ${subst};
+if [[ "$OSTYPE" == "darwin"* ]] || [[ "$OSTYPE" == "freebsd"* ]]; then
+        # Mac OSX
+        echo "this is a mac"
+        find ${repo_root} -maxdepth 1 -type f | xargs sed -i "" ${subst};
+else
+        find ${repo_root} -maxdepth 1 -type f | xargs sed -i ${subst};
+fi
+
 
 # Replace `drupal-module-template` with the module name in composer project name.
 subst="s/drupal-module-template/${repo_name}/g";
-sed -i ${subst} composer.json
+if [[ "$OSTYPE" == "darwin"* ]] || [[ "$OSTYPE" == "freebsd"* ]]; then
+        # Mac OSX
+        echo "this is a mac"
+        sed -i "" ${subst} composer.json
+else
+        sed -i ${subst} composer.json
+fi
 
 # Rename the files.
 mv drupal_module_template.info.yml ${repo_name}.info.yml
@@ -21,7 +34,7 @@ mv README.module.md README.md
 if [[ "$OSTYPE" == "darwin"* ]] || [[ "$OSTYPE" == "freebsd"* ]]; then
         # Mac OSX
         echo "this is a mac"
-        sed -i "" ""/build-module/d" composer.json
+        sed -i "" "/build-module/d" composer.json
 else
         sed -i "/build-module/d" composer.json
 fi
