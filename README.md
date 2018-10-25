@@ -5,10 +5,11 @@
 
 ### Building a new module with composer
 ```
-$ composer create-project openeuropa/drupal-module-template oe_my_new_module
+$ composer create-project openeuropa/drupal-module-template path/to/oe_my_new_module
 ```
+See the [composer documentation](https://getcomposer.org/doc/03-cli.md#create-project) for details.
 
-### Building manually a new module
+### Building a new module manually
 - Clone the repo
 - Run ./build-module.sh (see the script to know the actions)
 
