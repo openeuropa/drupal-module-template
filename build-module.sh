@@ -18,5 +18,12 @@ mv drupal_module_template.module ${repo_name}.module
 mv README.module.md README.md
 
 # Remove the call of build-module.sh in composer and delete it
-sed -i "/build-module/d" composer.json
+if [[ "$OSTYPE" == "darwin"* ]] || [[ "$OSTYPE" == "freebsd"* ]]; then
+        # Mac OSX
+        sed -i "" ""/build-module/d" composer.json
+# elif [[ "$OSTYPE" == "freebsd"* ]]; then
+ #       sed -i "" ""/build-module/d" composer.json
+# else
+        sed -i "/build-module/d" composer.json
+fi
 rm build-module.sh
