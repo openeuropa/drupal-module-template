@@ -6,7 +6,6 @@ repo_name=$(basename ${repo_root/-/_});
 subst="s/drupal_module_template/${repo_name}/g";
 if [[ "$OSTYPE" == "darwin"* ]] || [[ "$OSTYPE" == "freebsd"* ]]; then
         # Mac OSX
-        echo "this is a mac"
         find ${repo_root} -maxdepth 1 -type f | xargs sed -i "" ${subst};
 else
         find ${repo_root} -maxdepth 1 -type f | xargs sed -i ${subst};
@@ -17,7 +16,6 @@ fi
 subst="s/drupal-module-template/${repo_name}/g";
 if [[ "$OSTYPE" == "darwin"* ]] || [[ "$OSTYPE" == "freebsd"* ]]; then
         # Mac OSX
-        echo "this is a mac"
         sed -i "" ${subst} composer.json
 else
         sed -i ${subst} composer.json
@@ -33,7 +31,6 @@ mv README.module.md README.md
 # Remove the call of build-module.sh in composer and delete it
 if [[ "$OSTYPE" == "darwin"* ]] || [[ "$OSTYPE" == "freebsd"* ]]; then
         # Mac OSX
-        echo "this is a mac"
         sed -i "" "/build-module/d" composer.json
 else
         sed -i "/build-module/d" composer.json
