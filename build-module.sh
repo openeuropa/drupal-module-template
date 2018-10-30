@@ -36,4 +36,4 @@ else
         sed -i "/build-module/d" composer.json
 fi
 rm build-module.sh
-composer dump-autolad
+composer dump-autoload
