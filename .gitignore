@@ -3,7 +3,7 @@
 behat.yml
 build
 composer.lock
-docker-compose.yml
+docker-compose.*.yml
 grumphp.yml
 node_modules
 npm-debug.log
