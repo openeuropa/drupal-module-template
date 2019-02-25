@@ -11,6 +11,7 @@ parameters:
     - module
     - php
     - theme
+    - yml
 
   extensions:
     - OpenEuropa\CodeReview\ExtraTasksExtension
