@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.2.1](https://github.com/openeuropa/drupal-module-template/tree/0.2.1) (2019-06-20)
+[Full Changelog](https://github.com/openeuropa/drupal-module-template/compare/0.2.0...0.2.1)
+
+**Merged pull requests:**
+
+- OPENEUROPA-627: Add debug section to drone. [\#32](https://github.com/openeuropa/drupal-module-template/pull/32) ([dxvargas](https://github.com/dxvargas))
+- Removing Drupal console. [\#31](https://github.com/openeuropa/drupal-module-template/pull/31) ([upchuk](https://github.com/upchuk))
+- OPENEUROPA-1932: Update drone and composer files. [\#29](https://github.com/openeuropa/drupal-module-template/pull/29) ([voidtek](https://github.com/voidtek))
+
 ## [0.2.0](https://github.com/openeuropa/drupal-module-template/tree/0.2.0) (2019-05-06)
 [Full Changelog](https://github.com/openeuropa/drupal-module-template/compare/0.1.0...0.2.0)
 
@@ -9,6 +18,7 @@
 
 **Merged pull requests:**
 
+- OPENEUROPA-1813: Create release 0.2.0. [\#28](https://github.com/openeuropa/drupal-module-template/pull/28) ([voidtek](https://github.com/voidtek))
 - OPENEUROPA-1813: Upgrading to 8.7. [\#27](https://github.com/openeuropa/drupal-module-template/pull/27) ([upchuk](https://github.com/upchuk))
 
 ## [0.1.0](https://github.com/openeuropa/drupal-module-template/tree/0.1.0) (2019-02-26)
