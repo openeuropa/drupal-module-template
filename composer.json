@@ -11,8 +11,6 @@
     },
     "require-dev": {
         "composer/installers": "~1.5",
-        "consolidation/robo": "~1.4",
-        "consolidation/annotated-command": "^2.8.2",
         "drupal-composer/drupal-scaffold": "~2.2",
         "drupal/config_devel": "~1.2",
         "drupal/drupal-extension": "~4.0",
@@ -24,8 +22,6 @@
         "phpunit/phpunit": "~6.0"
     },
     "_readme": [
-        "We explicitly require consolidation/robo to allow lower 'composer update --prefer-lowest' to complete successfully.",
-        "We explicitly require consolidation/annotated-command to allow lower 'composer update --prefer-lowest' to complete successfully.",
         "We explicitly require guzzlehttp/guzzle to allow tests after 'composer update --prefer-lowest' to complete successfully."
     ],
     "scripts": {
