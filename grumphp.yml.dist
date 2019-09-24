@@ -12,3 +12,18 @@ parameters:
     - php
     - theme
     - yml
+  tasks.phpparser.triggered_by:
+    - inc
+    - install
+    - module
+    - php
+    - theme
+
+  extra_tasks:
+    phpparser:
+      ignore_patterns: %tasks.phpcs.ignore_patterns%
+      visitors:
+        declare_strict_types: ~
+      triggered_by: %tasks.phpparser.triggered_by%
+  extensions:
+    - OpenEuropa\CodeReview\ExtraTasksExtension
