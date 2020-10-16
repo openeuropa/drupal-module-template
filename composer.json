@@ -40,7 +40,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Drupal\\Tests\\drupal_module_template\\": "./tests/"
+            "Drupal\\Tests\\drupal_module_template\\": "./tests/src/"
         }
     },
     "extra": {
