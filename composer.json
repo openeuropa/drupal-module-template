@@ -11,8 +11,8 @@
     },
     "require-dev": {
         "composer/installers": "~1.5",
-        "drupal-composer/drupal-scaffold": "~2.2",
         "drupal/config_devel": "~1.2",
+        "drupal/core-composer-scaffold": "^8.8",
         "drupal/drupal-extension": "~4.0",
         "drush/drush": "~9.0@stable",
         "guzzlehttp/guzzle": "~6.3",
@@ -46,6 +46,11 @@
     "extra": {
         "composer-exit-on-patch-failure": true,
         "enable-patching": true,
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "./build"
+            }
+        },
         "installer-paths": {
             "build/core": ["type:drupal-core"],
             "build/profiles/contrib/{$name}": ["type:drupal-profile"],
