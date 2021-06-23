@@ -10,11 +10,11 @@
         "php": ">=7.3"
     },
     "require-dev": {
-        "composer/installers": "^1.11",
+        "composer/installers": "~1.11",
         "drupal/core-composer-scaffold": "^8.9 || ^9.1",
         "drupal/config_devel": "~1.2",
         "drupal/drupal-extension": "~4.0",
-        "drush/drush": "^10.3",
+        "drush/drush": "~10.3",
         "openeuropa/code-review": "~1.6",
         "openeuropa/drupal-core-require-dev": "^8.9 || ^9.1",
         "openeuropa/task-runner-drupal-project-symlink": "^1.0.0-beta3",
