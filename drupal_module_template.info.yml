@@ -2,5 +2,5 @@ name: OpenEuropa template
 description: OpenEuropa Drupal module template.
 package: OpenEuropa
 
+core_version_requirement: ^8.9 || ^9.1
 type: module
-core: 8.x
